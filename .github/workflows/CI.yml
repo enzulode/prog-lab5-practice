@@ -23,9 +23,6 @@ jobs:
     needs: [ prepare ]
     steps:
 
-      - name: Gradle wrapper validation
-        uses: actions/wrapper-validation-action@v1
-
       - name: Run tests
         run: ./gradlew test
 
