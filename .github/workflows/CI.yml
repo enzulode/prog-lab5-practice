@@ -41,7 +41,7 @@ jobs:
         with:
           args: '--replace --skip-reflowing-long-strings'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'automatic codestyle format: ${date}'
+          commit-message: "automatic_codestyle_format: $(date +'%Y-%m-%d')"
 
   notification:
     runs-on: ubuntu-latest
