@@ -36,12 +36,16 @@ jobs:
       - name: Cloning the repository
         uses: actions/checkout@v3
 
+      - name: Get current date
+        id: refactordate
+        run: echo "::set-output name=refactordate::$(date +'%Y-%m-%d')"
+
       - name: Code formatting
         uses: axel-op/googlejavaformat-action@v3
         with:
           args: '--replace --skip-reflowing-long-strings'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "automatic_codestyle_format: $(date +'%Y-%m-%d')"
+          commit-message: 'automatic_codestyle_format: ${{steps.refactordate.outputs.refactordate}}'
 
   notification:
     runs-on: ubuntu-latest
