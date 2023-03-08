@@ -38,7 +38,7 @@ jobs:
 
       - name: Get current date
         id: refactordate
-        run: echo "::set-output name=refactordate::$(date +'%Y-%m-%d')"
+        run: echo "::set-output name=refactordate::$(date +'%Y-%m-%d %H:%M')"
 
       - name: Code formatting
         uses: axel-op/googlejavaformat-action@v3
