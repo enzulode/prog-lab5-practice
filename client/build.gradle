@@ -1,0 +1,11 @@
+apply plugin: 'application'
+
+dependencies {
+    implementation project(':common')
+}
+
+group = 'com.megateam.lab.client'
+
+application {
+    mainClass = "${group}.Console"
+}
