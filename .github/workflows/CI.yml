@@ -36,16 +36,20 @@ jobs:
       - name: Cloning the repository
         uses: actions/checkout@v3
 
-      - name: Format the java code
-        run: ./gradlew goJF
-
-      - name: Apply formatted code to branch
-        uses: actions-js/push@master
+      - name: Code formatting
+        uses: axel-op/googlejavaformat-action@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 'master'
-          author_name: 'automatic_formatter[bot]'
-          message: 'automatic codestyle format: ${date}'
+          args: '--replace --skip-reflowing-long-strings'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'automatic codestyle format: ${date}'
+
+#      - name: Apply formatted code to branch
+#        uses: actions-js/push@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          branch: 'master'
+#          author_name: 'automatic_formatter[bot]'
+#          message: 'automatic codestyle format: ${date}'
 
   notification:
     runs-on: ubuntu-latest
