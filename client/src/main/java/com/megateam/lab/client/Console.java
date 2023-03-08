@@ -1,10 +1,8 @@
 package com.megateam.lab.client;
 
-public class Console
-{
+public class Console {
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     System.out.println("works");
   }
 }
