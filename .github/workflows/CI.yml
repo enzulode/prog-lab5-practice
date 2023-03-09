@@ -39,7 +39,6 @@ jobs:
       - name: Get current date
         id: refactordate
         run: echo "refactordate=$(date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
-#        run: echo "::set-output name=refactordate::$(date +'%Y-%m-%d %H:%M')"
 
       - name: Code formatting
         uses: axel-op/googlejavaformat-action@v3
